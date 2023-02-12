@@ -39,9 +39,9 @@ public class SecurityConfiguration {
                 .antMatchers("/", "/login", "/signup")
 
                 .permitAll()
-                .antMatchers("/users", "/vols**","/reservations**")
+                .antMatchers("/users", "/vols","/reservations")
                 .hasAuthority("ADMIN")
-                .antMatchers( "/vols**" ,"/reservations**")
+                .antMatchers( "/vols" ,"/reservations")
                 .hasAuthority("USER")
                 .anyRequest()
                 .authenticated()
